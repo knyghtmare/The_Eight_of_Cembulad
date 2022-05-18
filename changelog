@@ -1,0 +1,94 @@
+version 1.2.0 (May 13, 2022):
+
+* Porting to 1.16 by Lord-Knightmare
+* Deleted Troll Shaman2 and Goblin Pillager and subbed in mainline units
+
+version 1.1.2 (October 25, 2011):
+
+* various scenarios - description= >id= in macros {MOVE_UNIT},{TELEPORT_UNIT},{MODIFY_UNIT},{GUARDS_TO_ME} (pointed out by Krake)
+* scenarios/03_The_Journey_West.cfg - role=Taan >id=Taan, fix moveto victory
+* scenarios 03,09,15 - {ENDLEVEL_VICTORY_NOBONUS} >{ENDLEVEL_VICTORY no}
+* scenarios 09,15,23,24 - add {NO_EARLY_FINISH_BONUS_NOTE}
+* utils/scenario-utils.cfg - delete redundant {ENDLEVEL_VICTORY_NOBONUS}
+* units/Human_Swordmaster.cfg - {ABILITY_LEADERSHIP_LEVEL_3} >LEVEL_4 (pointed out by Krake)
+
+version 1.1.1 (October 19, 2011):
+
+* units/Dark_Halberdier.cfg - 
+* units/Dark_Warrior.cfg - add {AMLA_DEFAULT}, 
+* units/Demon_Mage.cfg - +
+* units/Demon_Warlord.cfg - +
+* units/Elvish_Longbowman.cfg - +
+* units/Elvish_Toxophilite.cfg - +
+* units/Goblin_Lancer.cfg - 
+* units/Half_Elf_Light_Mage.cfg - +
+* units/Half_Elf_Sylvan_War-Mage.cfg - +
+* units/Half_Elf_Woodland_Sorceress.cfg - +
+* units/Human_Champion.cfg - {ABILITY_SKIRMISHER}
+* units/Human_Elite.cfg - {ABILITY_SKIRMISHER}
+* units/Human_Swordmaster.cfg - add {AMLA_DEFAULT} (pointed out by SkyOne)
+* units/Lesser_Demon_Eviscerator.cfg - 
+* units/Lesser_Demon_Hatchling.cfg - +
+* units/Lesser_Demon_Psymaster.cfg - +
+* units/Lesser_Demon_Regular.cfg - +
+* units/Lesser_Demon_Terror.cfg - +, a truly >truly a
+* units/Mechanical_Quintain.cfg - movement_type=armouredfoot >armoredfoot
+* units/Monster_Gloomcrawler.cfg - 
+* units/Monster_Gore_Crow.cfg - 
+* units/Monster_Umbra_ Hulk.cfg - 
+* units/Skele_Bone_Master.cfg - ++
+* scenarios/02_Tenir_Forest.cfg - change archer to mixed fighter on EASY so Elvish Ranger can be recruited
+* scenarios/03_The_Journey_West.cfg - Cuttlefish >Cuttle Fish, insert [then] into [if] lesser victory, add {NO_EARLY_FINISH_BONUS_NOTE} to lesser victory objective
+* scenarios/04_Battle_For_Rhadiz.cfg - name={TURN} >name=turn {TURN} in {CROW_SPAWNS_*} macros
+* scenarios/06_Unexpected_Foes.cfg - insert [then] into [if] death event
+* scenarios/08_Return_Of_Resuil.cfg - replace fighter with scout in recruitment_pattern
+* scenarios/12_They_Attacked_At_Dawn.cfg - Demon Hatchling >Lesser Demon Hatchling
+* scenarios/18_Freedom.cfg - Urlicksson,Urlicksonn >Urlickssonn
+* scenarios/19_Lake_Spearre.cfg - put {MSG} translatability underscore in {GUARDS_TO_ME} macros, rather than in #define
+* scenarios/22_Fortress_Of_The_Night.cfg - change FOTN macros to use {ID_STRING},{NAME_STRING}
+* scenarios/24_Surrender_Or_Die.cfg - White Magee >Mage
+* scenarios/27_Epilogue.cfg - id=Oeka >Oeka2
+* various scenarios - convert all {NAMED_NL} to core {NAMED_GENERIC_UNIT}, {RAND_N_NL} to {GENERIC_UNIT}
+* utils/unit-utils.cfg - delete {NAMED_NL},{RAND_N_NL}; replace {DESC} with {ID_STRING},{NAME_STRING}; remove {SIDE} from {FOTN_TIALAGUARD}
+* _main.cfg - removed [+images] and [binary_path] above #ifdef, upped rank above 400, put translation invitation and feedback URL in credits
+
+version 1.1.0 (October 17, 2011):
+
+PORTING TO 1.8 BEGINS!
+
+* run wmllint
+* _main.cfg - data/campaigns >data/add-ons
+* units/*.cfg - [unit] >[unit_type]
+* run wmlscope
+* begin this changelog
+* _main.cfg - add textdomain path, porting credit, feedback link
+* images/halo/ - copy over halo/mage-halo*-big.png from 1.6; apparently removed from 1.8 core
+* images/story/mountains.png >.jpg
+* images/story/tenir2.JPG >.jpg
+* images/units/Diphyan/toxopholite*.png >toxophilite, toxopholiter-sword-1.png >toxophilite
+* images/units/Tuoryr/mymidon-defend.png >myrmidon
+* scenarios/11_Mysterious_Circustances.cfg - elf-female-hit-1.ogg >human-*
+* scenarios/15_Pass_Of_The_Pillagers.cfg - STORY_PASS_OFF_THE_PILLAGERS >_OF
+* scenarios/19_Lake_Spearre.cfg - Duellist >Duelist
+* scenarios/22_Fortress_Of_The_Night.cfg - STORY_FORTESS_OF_THE_NIGHT >_FORTRESS, random-enemy.png >unknown-unit.png, {SET_VARIABLE} >{VARIABLE}
+* various units - #textdomain wesnoth-units,wesnoth-Invasion_from_the_Unknown,wesnoth-cembluad >wesnoth-cembulad
+* monster units - claws.wav >.ogg
+* units/Elvish_Toxophilite.cfg - units/Diphyan/toxopholite-* >toxophilite-*
+* units/Fake_Spirit.cfg - insert icon=attacks/touch-undead.png
+* units/Human_Advisor.cfg - [leading_anim]units/human-magi/arch-mage-magic-2.png >arch-mage-attack-magic-2.png
+* units/Human_Chief_Advisor.cfg - [leading_anim]units/human-magi/great-mage-magic-2.png >great-mage-attack-magic-2.png
+* units/Human_Elite.cfg - units/Sel/elite-attack-*.png >elite-sword-*
+* units/Human_Farmer.cfg - replace [attack_anim] with 1.8 Outlaw_Thug [attack_anim]; name=el d smooth stick >smooth stick
+* units/Human_Knight.cfg - add profile, change images in {DEFENSE_ANIM_RANGE ranged}
+* units/Human_Swordmaster.cfg - add profile, units/Taan/swordmaster-amulet.png >swordmaster-leading.png
+* units/Lesser_Demon_Psymaster.cfg - psymaster-moving.png >psymaster-fly.png
+* units/Monster_Gryphon_Skylord.cfg - replace animation with 1.8 Gryphon.cfg animation
+* utils/animation.cfg - units/elder-mage* >units/human-magi/elder-mage*
+* utils/objects.cfg", line 363 - dark-magic-big.ogg >magic-dark-big.ogg, icons/potion-red-1.png >potion_red_medium.png, random-enemy.png >unknown-unit.png
+* utils/story.cfg - tenir2.JPG,rhadiz.png,mountains.png >.jpg; STORY_CITY_OF_BLOOD >_THE_CITY; spellchecked captital >capital,reassurring >reassuring
+* utils/unit-utils.cfg - remove {GUARDIAN} in favor of core macro
+* mkdir translations/
+
+version 1.0.1 (October 21, 2009):
+
+* LAST RELEASE in 1.4 series
